@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entites
 {
-    internal class League
+    public class League
     { 
         public int Id { get; set; }
         public string name { get; set; }
