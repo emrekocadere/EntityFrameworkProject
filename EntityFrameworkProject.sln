@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{9C7DFF45-CCB1-4FE0-9E2C-C95DD484EF55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entites", "Entites\Entites.csproj", "{6C1DA177-AA03-4688-B843-F7C9A2BDAE78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{7897087A-2C10-4149-BB1A-8513DD8F48B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C7DFF45-CCB1-4FE0-9E2C-C95DD484EF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7DFF45-CCB1-4FE0-9E2C-C95DD484EF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7DFF45-CCB1-4FE0-9E2C-C95DD484EF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7DFF45-CCB1-4FE0-9E2C-C95DD484EF55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1DA177-AA03-4688-B843-F7C9A2BDAE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1DA177-AA03-4688-B843-F7C9A2BDAE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1DA177-AA03-4688-B843-F7C9A2BDAE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1DA177-AA03-4688-B843-F7C9A2BDAE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7897087A-2C10-4149-BB1A-8513DD8F48B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7897087A-2C10-4149-BB1A-8513DD8F48B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7897087A-2C10-4149-BB1A-8513DD8F48B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7897087A-2C10-4149-BB1A-8513DD8F48B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E06E1984-8CC2-477F-9CAB-C27385F2CF35}
+	EndGlobalSection
+EndGlobal
