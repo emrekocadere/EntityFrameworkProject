@@ -10,5 +10,7 @@ namespace Entites
     {
         public int Id { get; set; }
         public List<Player> Players { get; set; }
+        public int LeagueId { get; set; }
+        public League League { get; set; }
     }
 }
