@@ -13,9 +13,9 @@ namespace Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer("Server=EMREVIVO;Database=EntityFrameworkProject;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=EMREVIVO;Database=EntityFrameworkProject;Trusted_Connection=True;TrustServerCertificate=True");
         }
-        DbSet<League> Leagues { get; set; }
-        DbSet<Coach> Coaches { get; set; }
+       public DbSet<League> Leagues { get; set; }
+        public DbSet<Coach> Coaches { get; set; }
     }
 }
