@@ -12,7 +12,7 @@ namespace Entites
         public string Name { get; set; }
         public string Surname { get; set; }
         public int LeagueId { get; set; }
-        public League League { get; set; }
+        public Team Team { get; set; }
 
 
     }

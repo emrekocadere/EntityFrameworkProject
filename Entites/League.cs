@@ -10,6 +10,5 @@ namespace Entites
     { 
         public int Id { get; set; }
         public string name { get; set; }
-        public Coach Coach { get; set; }
     }
 }
