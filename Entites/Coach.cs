@@ -11,7 +11,7 @@ namespace Entites
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int LeagueId { get; set; }
+        public int TeamId { get; set; }
         public Team Team { get; set; }
 
 
