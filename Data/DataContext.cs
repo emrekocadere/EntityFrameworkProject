@@ -15,7 +15,7 @@ namespace Data
 
             optionsBuilder.UseSqlServer("Server=EMREVIVO;Database=EntityFrameworkProject;Trusted_Connection=True;TrustServerCertificate=True");
         }
-       public DbSet<League> Leagues { get; set; }
+        public DbSet<League> Leagues { get; set; }
         public DbSet<Coach> Coaches { get; set; }
     }
 }
