@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entites
 {
-    internal class Team
+    public class Team
     {
         public int Id { get; set; }
         public List<Player> Players { get; set; }

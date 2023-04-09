@@ -17,5 +17,7 @@ namespace Data
         }
         public DbSet<League> Leagues { get; set; }
         public DbSet<Coach> Coaches { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
     }
 }
