@@ -8,7 +8,7 @@ using Entites;
 
 namespace Data
 {
-    internal class DataContext : DbContext
+    public class DataContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
