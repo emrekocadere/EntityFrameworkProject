@@ -13,5 +13,6 @@ namespace Entites
         public List<Player> Players { get; set; }
         public int LeagueId { get; set; }
         public League League { get; set; }
+        public Coach coach { get; set; }
     }
 }
