@@ -2,37 +2,29 @@
 using Data;
 
 int input;
-string whichEntity;
-DataContext dataContext = new DataContext();
+string whichEntity="";//bunu null yap bir
+//DataContext dataContext = new DataContext();
 void FirstMenuSelection()
 {
     switch(input)
     {
 
-        case (49):
-            Console.WriteLine("you selected 1");
+        case (1):
             whichEntity = "Leageu";
-            SecondMenuSection();
             break;
 
-        case (50):
-            Console.WriteLine("you selected 2");
+        case (3):
             whichEntity = "Team";
-            SecondMenuSection();
             break;
             
 
-        case (51):
-            Console.WriteLine("you selected 3");
+        case (4):
             whichEntity = "Coach";
-            SecondMenuSection();
             break;
             
 
-        case (52):
-            Console.WriteLine("you selected 4");
+        case (5):
             whichEntity = "Player";
-            SecondMenuSection();
             break;
             
     }
@@ -43,19 +35,19 @@ void SecondMenuSelection()
     switch (input)
     {
 
-        case (49):
+        case (1):
             Console.WriteLine("you selected 1");
             break;
 
-        case (50):
+        case (2):
             Console.WriteLine("you selected 2");
             break;
 
-        case (51):
+        case (3):
             Console.WriteLine("you selected 3");
             break;
 
-        case (52):
+        case (4):
             Console.WriteLine("you selected 4");
             break;
     }
@@ -67,24 +59,37 @@ void FirstMenuSection()
     Console.WriteLine("2-Team");
     Console.WriteLine("3-Coach");
     Console.WriteLine("4-Player");
+    Console.BackgroundColor = ConsoleColor.Magenta;
+    Console.Write("Your Selection : ");
+    input = int.Parse(Console.ReadLine());
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.WriteLine(input);
+
 }
+
 void SecondMenuSection()
 {
     Console.WriteLine("1-Get All Records");
-    Console.WriteLine("2-Find"+ " " + whichEntity);
+    Console.WriteLine("2-Find" + " "+whichEntity );
     Console.WriteLine("3-Delete A Record");
-    Console.WriteLine("4-Add A"+ " " + whichEntity);
+    Console.WriteLine("4-Add A"+ " "+whichEntity );
+    Console.BackgroundColor = ConsoleColor.Magenta;
+    Console.Write("Your Selection : ");
+    input = int.Parse(Console.ReadLine());
+    Console.BackgroundColor = ConsoleColor.Black;
+
 }
 
-
-//    First menu section
-
 FirstMenuSection();
-Console.Write("Your Selection : ");
-input = Console.Read();
-Console.WriteLine();
-Console.WriteLine(input);
 FirstMenuSelection();
+SecondMenuSection();
+SecondMenuSelection();
+
+
+
+
+
+
 
 
 
