@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entites
 {
-    public class League 
+    public class League : Itable
     { 
         public int Id { get; set; }
         public string name { get; set; }

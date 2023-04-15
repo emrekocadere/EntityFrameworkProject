@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entites
 {
-    internal interface Itable
+    public class Itable
     {
     }
 }

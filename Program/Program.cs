@@ -1,11 +1,13 @@
 ﻿
 using Data;
 using Entites;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 int input;
 string whichEntity="";//bunu null yap bir
 DataContext dataContext = new DataContext();
-Itable c;
+DbSet<Itable> table;
 void FirstMenuSelection()
 {
     switch(input)
