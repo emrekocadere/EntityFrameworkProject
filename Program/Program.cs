@@ -3,14 +3,16 @@ using Data;
 
 int input;
 string whichEntity="";//bunu null yap bir
-//DataContext dataContext = new DataContext();
+DataContext dataContext = new DataContext();
 void FirstMenuSelection()
 {
     switch(input)
     {
+       
 
         case (1):
             whichEntity = "Leageu";
+           
             break;
 
         case (3):
@@ -63,8 +65,6 @@ void FirstMenuSection()
     Console.Write("Your Selection : ");
     input = int.Parse(Console.ReadLine());
     Console.BackgroundColor = ConsoleColor.Black;
-    Console.WriteLine(input);
-
 }
 
 void SecondMenuSection()
@@ -80,10 +80,12 @@ void SecondMenuSection()
 
 }
 
+
 FirstMenuSection();
 FirstMenuSelection();
 SecondMenuSection();
 SecondMenuSelection();
+
 
 
 
