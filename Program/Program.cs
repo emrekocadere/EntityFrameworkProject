@@ -1,9 +1,11 @@
 ﻿
 using Data;
+using Entites;
 
 int input;
 string whichEntity="";//bunu null yap bir
 DataContext dataContext = new DataContext();
+Itable c;
 void FirstMenuSelection()
 {
     switch(input)

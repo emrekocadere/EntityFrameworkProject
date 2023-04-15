@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entites;
-
 namespace Data
 {
     public class DataContext : DbContext
