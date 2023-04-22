@@ -7,19 +7,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 int input;
 string whichEntity="";//bunu null yap bir
 DataContext dataContext = new DataContext();
-DbSet<Itable> table;
 void FirstMenuSelection()
 {
     switch(input)
     {
         case (1):
             whichEntity = "Leageu";
-            //table = dataContext.Leagues;
-            table = (DbSet<Itable>)dataContext.Leagues.Cast<Itable>();
-            foreach(var table in table.ToList())
-            {
-                Console.WriteLine(table);
-            }
             break;
 
         case (3):
