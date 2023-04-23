@@ -1,5 +1,6 @@
-﻿
+﻿         
 using Data;
+using Data.Repository;
 using Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -31,7 +32,6 @@ void FirstMenuSelection()
             
     }
 }
-
 void SecondMenuSelection()
 {
     switch (input)
@@ -85,6 +85,9 @@ FirstMenuSection();
 FirstMenuSelection();
 SecondMenuSection();
 SecondMenuSelection();
+
+LeagueRepository a=new LeagueRepository();
+
 
 
 

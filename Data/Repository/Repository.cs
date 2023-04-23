@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Data.Repository
 {
-    internal class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DataContext context = new DataContext();
+        public readonly DataContext context = new DataContext();
         public T create(T entity)
         {
             context.Set<T>().Add(entity);
