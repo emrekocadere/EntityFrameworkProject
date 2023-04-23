@@ -90,24 +90,27 @@ void GetAllRecords()
         }
     }
 }
-void FindRecord(string leagueName)
+void FindRecord(string name)
 {
     if (whichEntity == "League")
     {
-     var entity=dataContext.Leagues.FirstOrDefault(x=>x.name==leagueName);
+     var entity=dataContext.Leagues.FirstOrDefault(x=>x.name== name);
         Console.WriteLine(entity.Id);
     }
     else if (whichEntity == "Team")
     {
-       
+        var entity = dataContext.Teams.FirstOrDefault(x => x.Name == name);
+        Console.WriteLine(entity.Id);
     }
     else if (whichEntity == "Coach")
     {
-      
+        var entity = dataContext.Coaches.FirstOrDefault(x => x.Name == name);
+        Console.WriteLine(entity.Id);
     }
     else if (whichEntity == "Player")
     {
-     
+        var entity = dataContext.Players.FirstOrDefault(x => x.Name == name);
+        Console.WriteLine(entity.Id);
     }
 }
 void SecondMenuSelection()
