@@ -4,6 +4,7 @@ using Data.Repository;
 using Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Security.Cryptography.X509Certificates;
 
 int input;
 string whichEntity="";//bunu null yap bir
@@ -26,7 +27,7 @@ void FirstMenuSelection()
     switch(input)
     {
         case (1):
-            whichEntity = "Leageu";
+            whichEntity = "League";
             break;
 
         case (2):
@@ -62,9 +63,9 @@ void GetAllRecords()
 {
     if (whichEntity == "League")
     {
-        foreach(var a in dataContext.Coaches.ToList())
+        foreach(var a in dataContext.Leagues.ToList())
         {
-            Console.WriteLine(a.ToString());
+            Console.WriteLine(a.name);
         }
     }
     else if(whichEntity == "Team")
@@ -89,18 +90,39 @@ void GetAllRecords()
         }
     }
 }
-
+void FindRecord(string leagueName)
+{
+    if (whichEntity == "League")
+    {
+     var entity=dataContext.Leagues.FirstOrDefault(x=>x.name==leagueName);
+        Console.WriteLine(entity.Id);
+    }
+    else if (whichEntity == "Team")
+    {
+       
+    }
+    else if (whichEntity == "Coach")
+    {
+      
+    }
+    else if (whichEntity == "Player")
+    {
+     
+    }
+}
 void SecondMenuSelection()
 {
     switch (input)
     {
 
         case (1):
-            Console.WriteLine("you selected 1");
+            GetAllRecords();
             break;
 
         case (2):
-            Console.WriteLine("you selected 2");
+            Console.WriteLine("Which League Do You Want To Find");
+            string leagueName=Console.ReadLine();
+            FindRecord(leagueName);
             break;
 
         case (3):
@@ -114,23 +136,8 @@ void SecondMenuSelection()
 }
 
 
-
-
 FirstMenuSection();
 FirstMenuSelection();
 SecondMenuSection();
 SecondMenuSelection();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
