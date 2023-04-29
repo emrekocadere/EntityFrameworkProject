@@ -113,6 +113,15 @@ void FindRecord(string name)
         Console.WriteLine(entity.Id);
     }
 }
+void DeleteRecord(string name)
+{
+    if (whichEntity == "League")
+    {
+        var entity = dataContext.Leagues.FirstOrDefault(x => x.name == name);
+        dataContext.Leagues.Remove(entity);
+        dataContext.SaveChanges();
+    }
+}
 void SecondMenuSelection()
 {
     switch (input)
@@ -124,12 +133,14 @@ void SecondMenuSelection()
 
         case (2):
             Console.WriteLine("Which League Do You Want To Find");
-            string leagueName=Console.ReadLine();
-            FindRecord(leagueName);
+            string name=Console.ReadLine();
+            FindRecord(name);
             break;
 
         case (3):
-            Console.WriteLine("you selected 3");
+            Console.WriteLine("Which League Do You Want To Delete");
+            string name2 = Console.ReadLine();
+            DeleteRecord(name2);
             break;
 
         case (4):
