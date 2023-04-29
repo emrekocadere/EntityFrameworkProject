@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 namespace Entites
 {
     public class League
-    { 
+    {
+        public override string ToString()
+        {
+            return "Id: "+Id+" Name: "+Name;
+        }
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
         public List<Team>Teams { get; set; }
     }
 }
