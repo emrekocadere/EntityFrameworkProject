@@ -8,6 +8,10 @@ namespace Entites
 {
     public class Team
     {
+        public override string ToString()
+        {
+            return "Id: " + Id + " Name: " + Name;
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Player> Players { get; set; }
