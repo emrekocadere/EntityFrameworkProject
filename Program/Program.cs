@@ -9,6 +9,10 @@ using System.Security.Cryptography.X509Certificates;
 int input;
 string whichEntity="";//bunu null yap bir
 DataContext dataContext = new DataContext();
+LeagueRepository leagueRepository = new LeagueRepository();
+TeamRepository teamRepository = new TeamRepository();
+CoachRepository coachRepository = new CoachRepository();
+PlayerRepository playerRepository = new PlayerRepository();
 
 
 void FirstMenuSection()
@@ -63,30 +67,30 @@ void GetAllRecords()
 {
     if (whichEntity == "League")
     {
-        foreach(var a in dataContext.Leagues.ToList())
+        foreach(var league in leagueRepository.readAll())
         {
-            Console.WriteLine(a.name);
+            Console.WriteLine(league.ToString());
         }
     }
     else if(whichEntity == "Team")
     {
-        foreach (var a in dataContext.Teams.ToList())
+        foreach (var team in teamRepository.readAll())
         {
-            Console.WriteLine(a.ToString());
+            Console.WriteLine(team.ToString());
         }
     }
     else if (whichEntity == "Coach")
     {
-        foreach (var a in dataContext.Coaches.ToList())
+        foreach (var coach in coachRepository.readAll())
         {
-            Console.WriteLine(a.ToString());
+            Console.WriteLine(coach.ToString());
         }
     }
     else if (whichEntity == "Player")
     {
-        foreach (var a in dataContext.Players.ToList())
+        foreach (var player in playerRepository.readAll())
         {
-            Console.WriteLine(a.ToString());
+            Console.WriteLine(player.ToString());
         }
     }
 }
@@ -94,7 +98,7 @@ void FindRecord(string name)
 {
     if (whichEntity == "League")
     {
-     var entity=dataContext.Leagues.FirstOrDefault(x=>x.name== name);
+     var entity=dataContext.Leagues.FirstOrDefault(x=>x.Name== name);
         Console.WriteLine(entity.Id);
     }
     else if (whichEntity == "Team")
@@ -117,7 +121,7 @@ void DeleteRecord(string name)
 {
     if (whichEntity == "League")
     {
-        var entity = dataContext.Leagues.FirstOrDefault(x => x.name == name);
+        var entity = dataContext.Leagues.FirstOrDefault(x => x.Name == name);
         dataContext.Leagues.Remove(entity);
         dataContext.SaveChanges();
     }
