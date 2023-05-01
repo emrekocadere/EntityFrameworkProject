@@ -143,6 +143,16 @@ void DeleteRecord(string name)
     }
 
 }
+void CreateLeague(string name)
+{
+    League league = new League()
+    {
+        Name = name
+    };
+    leagueRepository.create(league);
+
+}
+
 void SecondMenuSelection()
 {
     switch (input)
@@ -165,7 +175,9 @@ void SecondMenuSelection()
             break;
 
         case (4):
-            Console.WriteLine("you selected 4");
+            Console.WriteLine("Which " + whichEntity + " do you want to add");
+            string name3 = Console.ReadLine();
+            createLeague(name3);
             break;
     }
 }
