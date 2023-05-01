@@ -152,6 +152,45 @@ void CreateLeague(string name)
     leagueRepository.create(league);
 
 }
+void CreateTeam(string name,int leagueId)
+{
+    Team team = new Team()
+    {
+        Name = name,
+        LeagueId=leagueId
+    };
+    teamRepository.create(team);
+
+}
+void CreateCoach(string name,string surname, int teamId)
+{
+    Coach coach = new Coach()
+    {
+        Name = name,
+        Surname=surname,
+        TeamId=teamId
+    };
+    coachRepository.create(coach);
+
+}
+//void CreateLeague(string name)
+//{
+//    League league = new League()
+//    {
+//        Name = name
+//    };
+//    leagueRepository.create(league);
+
+//}
+//void CreateLeague(string name)
+//{
+//    League league = new League()
+//    {
+//        Name = name
+//    };
+//    leagueRepository.create(league);
+
+//}
 
 void SecondMenuSelection()
 {
@@ -177,7 +216,11 @@ void SecondMenuSelection()
         case (4):
             Console.WriteLine("Which " + whichEntity + " do you want to add");
             string name3 = Console.ReadLine();
-            createLeague(name3);
+            Console.WriteLine("Which " + whichEntity + " do you want to add");
+            string name4 = Console.ReadLine();
+            Console.WriteLine("Which " + whichEntity + " do you want to add");
+            string ıd = Console.ReadLine();
+            CreateCoach(name3,name4, int.Parse(ıd));
             break;
     }
 }
