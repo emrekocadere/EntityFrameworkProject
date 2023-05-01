@@ -13,6 +13,6 @@ namespace Data.Repository
         T ReadById(int id);
         T create(T entity);
         T update(T entity);
-        T delete(T entity);
+        void delete(T entity);
     }
 }

@@ -1,4 +1,4 @@
-﻿         
+﻿
 using Data;
 using Data.Repository;
 using Entites;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using System.Security.Cryptography.X509Certificates;
 
 int input;
-string whichEntity="";//bunu null yap bir
+string whichEntity = "";//bunu null yap bir
 DataContext dataContext = new DataContext();
 LeagueRepository leagueRepository = new LeagueRepository();
 TeamRepository teamRepository = new TeamRepository();
@@ -28,7 +28,7 @@ void FirstMenuSection()
 }
 void FirstMenuSelection()
 {
-    switch(input)
+    switch (input)
     {
         case (1):
             whichEntity = "League";
@@ -37,17 +37,17 @@ void FirstMenuSelection()
         case (2):
             whichEntity = "Team";
             break;
-            
+
 
         case (3):
             whichEntity = "Coach";
             break;
-            
+
 
         case (4):
             whichEntity = "Player";
             break;
-            
+
     }
 }
 void SecondMenuSection()
@@ -67,12 +67,12 @@ void GetAllRecords()
 {
     if (whichEntity == "League")
     {
-        foreach(var league in leagueRepository.readAll())
+        foreach (var league in leagueRepository.readAll())
         {
             Console.WriteLine(league.ToString());
         }
     }
-    else if(whichEntity == "Team")
+    else if (whichEntity == "Team")
     {
         foreach (var team in teamRepository.readAll())
         {
@@ -98,23 +98,23 @@ void FindRecord(string name)
 {
     if (whichEntity == "League")
     {
-     var entity=dataContext.Leagues.FirstOrDefault(x=>x.Name== name);
-        Console.WriteLine(entity.Id);
+        var entity = dataContext.Leagues.FirstOrDefault(x => x.Name == name);
+        Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Team")
     {
         var entity = dataContext.Teams.FirstOrDefault(x => x.Name == name);
-        Console.WriteLine(entity.Id);
+        Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Coach")
     {
         var entity = dataContext.Coaches.FirstOrDefault(x => x.Name == name);
-        Console.WriteLine(entity.Id);
+        Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Player")
     {
         var entity = dataContext.Players.FirstOrDefault(x => x.Name == name);
-        Console.WriteLine(entity.Id);
+        Console.WriteLine(entity.ToString());
     }
 }
 void DeleteRecord(string name)
@@ -122,9 +122,26 @@ void DeleteRecord(string name)
     if (whichEntity == "League")
     {
         var entity = dataContext.Leagues.FirstOrDefault(x => x.Name == name);
-        dataContext.Leagues.Remove(entity);
-        dataContext.SaveChanges();
+        leagueRepository.delete(entity);
     }
+    else if (whichEntity == "Team")
+    {
+        var entity = dataContext.Teams.FirstOrDefault(x => x.Name == name);
+        teamRepository.delete(entity);
+    }
+    else if (whichEntity == "Coach")
+    {
+        var entity = dataContext.Coaches.FirstOrDefault(x => x.Name == name);
+        coachRepository.delete(entity);
+
+    }
+    else if (whichEntity == "Player")
+    {
+        var entity = dataContext.Players.FirstOrDefault(x => x.Name == name);
+        playerRepository.delete(entity);
+
+    }
+
 }
 void SecondMenuSelection()
 {
@@ -137,7 +154,7 @@ void SecondMenuSelection()
 
         case (2):
             Console.WriteLine("Which League Do You Want To Find");
-            string name=Console.ReadLine();
+            string name = Console.ReadLine();
             FindRecord(name);
             break;
 

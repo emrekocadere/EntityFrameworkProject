@@ -16,11 +16,11 @@ namespace Data.Repository
             return entity;
         }
 
-        public T delete(T entity)
+        public void delete(T entity)
         {
             context.Set<T>().Remove(entity);
             context.SaveChanges();
-            return entity;
+            //return entity;
         }
 
         public List<T> readAll()
@@ -37,5 +37,6 @@ namespace Data.Repository
         {
             return entity;
         }
+
     }
 }
