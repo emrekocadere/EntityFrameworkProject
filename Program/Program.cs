@@ -173,24 +173,18 @@ void CreateCoach(string name,string surname, int teamId)
     coachRepository.create(coach);
 
 }
-//void CreateLeague(string name)
-//{
-//    League league = new League()
-//    {
-//        Name = name
-//    };
-//    leagueRepository.create(league);
+void CreatePlayer(string name,string surname,int teamId)
+{
+    Player player = new Player()
+    {
+        Name = name,
+        Surname=surname,
+        TeamId=teamId
+    };
+    playerRepository.create(player);
 
-//}
-//void CreateLeague(string name)
-//{
-//    League league = new League()
-//    {
-//        Name = name
-//    };
-//    leagueRepository.create(league);
+}
 
-//}
 
 void SecondMenuSelection()
 {
