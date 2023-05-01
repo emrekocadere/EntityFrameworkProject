@@ -196,25 +196,63 @@ void SecondMenuSelection()
             break;
 
         case (2):
-            Console.WriteLine("Which League Do You Want To Find");
+            Console.Write("Which League Do You Want To Find");
             string name = Console.ReadLine();
             FindRecord(name);
             break;
 
         case (3):
-            Console.WriteLine("Which League Do You Want To Delete");
+            Console.Write("Which League Do You Want To Delete");
             string name2 = Console.ReadLine();
             DeleteRecord(name2);
             break;
 
         case (4):
-            Console.WriteLine("Which " + whichEntity + " do you want to add");
-            string name3 = Console.ReadLine();
-            Console.WriteLine("Which " + whichEntity + " do you want to add");
-            string name4 = Console.ReadLine();
-            Console.WriteLine("Which " + whichEntity + " do you want to add");
-            string ıd = Console.ReadLine();
-            CreateCoach(name3,name4, int.Parse(ıd));
+            if (whichEntity == "League")
+            {
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                Console.Write("Enter " + whichEntity + " Name: ");
+                string LeagueName=Console.ReadLine();
+                CreateLeague(LeagueName);
+                Console.BackgroundColor= ConsoleColor.Black;
+            }
+            else if (whichEntity == "Team")
+            {
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                Console.Write("Enter " + whichEntity + " Name: ");
+                string teamName = Console.ReadLine();
+                Console.WriteLine("Enter " + whichEntity + " League ID: ");
+                string leagueId = Console.ReadLine();
+                CreateTeam(teamName,int.Parse(leagueId));
+                Console.BackgroundColor = ConsoleColor.Black;
+            }
+            else if (whichEntity == "Coach")
+            {
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                Console.Write("Enter " + whichEntity + " Name: ");
+                string coachName = Console.ReadLine();
+                Console.Write("Enter " + whichEntity + " Surname: ");
+                string coachSurname = Console.ReadLine();
+                Console.Write("Enter " + whichEntity + " Team ID: ");
+                string teamId = Console.ReadLine();
+                CreateCoach(coachName,coachSurname, int.Parse(teamId));
+                Console.BackgroundColor = ConsoleColor.Black;
+
+            }
+            else if (whichEntity == "Player")
+            {
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                Console.Write("Enter " + whichEntity + " Name: ");
+                string playerhName = Console.ReadLine();
+                Console.Write("Enter " + whichEntity + " Surname: ");
+                string playerSurname = Console.ReadLine();
+                Console.Write("Enter " + whichEntity + " Team ID: ");
+                string teamId = Console.ReadLine();
+                CreatePlayer(playerhName, playerSurname, int.Parse(teamId));
+                Console.BackgroundColor = ConsoleColor.Black;
+
+            }
+
             break;
     }
 }
