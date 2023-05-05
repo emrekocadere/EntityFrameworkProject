@@ -25,6 +25,7 @@ void FirstMenuSection()
     Console.Write("Your Selection : ");
     input = int.Parse(Console.ReadLine());
     Console.BackgroundColor = ConsoleColor.Black;
+    FirstMenuSelection();
 }
 void FirstMenuSelection()
 {
@@ -49,6 +50,7 @@ void FirstMenuSelection()
             break;
 
     }
+    SecondMenuSection(); 
 }
 void SecondMenuSection()
 {
@@ -56,10 +58,14 @@ void SecondMenuSection()
     Console.WriteLine("2-Find" + " " + whichEntity);
     Console.WriteLine("3-Delete A Record");
     Console.WriteLine("4-Add A" + " " + whichEntity);
+    Console.WriteLine("0-Back");
     Console.BackgroundColor = ConsoleColor.Magenta;
     Console.Write("Your Selection : ");
     input = int.Parse(Console.ReadLine());
     Console.BackgroundColor = ConsoleColor.Black;
+    SecondMenuSelection();
+
+
 
 }
 
@@ -152,34 +158,34 @@ void CreateLeague(string name)
     leagueRepository.create(league);
 
 }
-void CreateTeam(string name,int leagueId)
+void CreateTeam(string name, int leagueId)
 {
     Team team = new Team()
     {
         Name = name,
-        LeagueId=leagueId
+        LeagueId = leagueId
     };
     teamRepository.create(team);
 
 }
-void CreateCoach(string name,string surname, int teamId)
+void CreateCoach(string name, string surname, int teamId)
 {
     Coach coach = new Coach()
     {
         Name = name,
-        Surname=surname,
-        TeamId=teamId
+        Surname = surname,
+        TeamId = teamId
     };
     coachRepository.create(coach);
 
 }
-void CreatePlayer(string name,string surname,int teamId)
+void CreatePlayer(string name, string surname, int teamId)
 {
     Player player = new Player()
     {
         Name = name,
-        Surname=surname,
-        TeamId=teamId
+        Surname = surname,
+        TeamId = teamId
     };
     playerRepository.create(player);
 
@@ -212,9 +218,9 @@ void SecondMenuSelection()
             {
                 Console.BackgroundColor = ConsoleColor.Magenta;
                 Console.Write("Enter " + whichEntity + " Name: ");
-                string LeagueName=Console.ReadLine();
+                string LeagueName = Console.ReadLine();
                 CreateLeague(LeagueName);
-                Console.BackgroundColor= ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.Black;
             }
             else if (whichEntity == "Team")
             {
@@ -223,7 +229,7 @@ void SecondMenuSelection()
                 string teamName = Console.ReadLine();
                 Console.WriteLine("Enter " + whichEntity + " League ID: ");
                 string leagueId = Console.ReadLine();
-                CreateTeam(teamName,int.Parse(leagueId));
+                CreateTeam(teamName, int.Parse(leagueId));
                 Console.BackgroundColor = ConsoleColor.Black;
             }
             else if (whichEntity == "Coach")
@@ -235,7 +241,7 @@ void SecondMenuSelection()
                 string coachSurname = Console.ReadLine();
                 Console.Write("Enter " + whichEntity + " Team ID: ");
                 string teamId = Console.ReadLine();
-                CreateCoach(coachName,coachSurname, int.Parse(teamId));
+                CreateCoach(coachName, coachSurname, int.Parse(teamId));
                 Console.BackgroundColor = ConsoleColor.Black;
 
             }
@@ -253,13 +259,13 @@ void SecondMenuSelection()
 
             }
 
+            break; 
+        case (0):
+            FirstMenuSection();
             break;
+
     }
 }
 
 
 FirstMenuSection();
-FirstMenuSelection();
-SecondMenuSection();
-SecondMenuSelection();
-
