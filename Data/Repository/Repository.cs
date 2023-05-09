@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Data.Repository
 
         public List<T> readAll()
         {
-            return context.Set<T>().ToList();
+            return context.Set<T>().AsNoTracking().ToList();
         }
 
         public T ReadById(int id)

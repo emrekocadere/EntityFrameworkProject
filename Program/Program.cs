@@ -64,9 +64,6 @@ void SecondMenuSection()
     input = int.Parse(Console.ReadLine());
     Console.BackgroundColor = ConsoleColor.Black;
     SecondMenuSelection();
-
-
-
 }
 
 void GetAllRecords()
