@@ -4,6 +4,7 @@ using Data.Repository;
 using Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System;
 using System.Security.Cryptography.X509Certificates;
 
 int input;
@@ -21,6 +22,7 @@ void FirstMenuSection()
     Console.WriteLine("2-Team");
     Console.WriteLine("3-Coach");
     Console.WriteLine("4-Player");
+    Console.WriteLine("0-Exit");
     Console.BackgroundColor = ConsoleColor.Magenta;
     Console.Write("Your Selection : ");
     input = int.Parse(Console.ReadLine());
@@ -47,6 +49,10 @@ void FirstMenuSelection()
 
         case (4):
             whichEntity = "Player";
+            break;
+
+        case (0):
+            Environment.Exit(0);//look for this.
             break;
 
     }
