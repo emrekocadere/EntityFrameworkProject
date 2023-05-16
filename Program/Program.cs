@@ -1,11 +1,7 @@
-﻿
-using Data;
+﻿using Data;
 using Data.Repository;
 using Entites;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System;
-using System.Security.Cryptography.X509Certificates;
+
 
 int input;
 string whichEntity = "";//bunu null yap bir
