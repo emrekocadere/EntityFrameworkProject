@@ -1,7 +1,7 @@
 ﻿using Data;
 using Data.Repository;
 using Entites;
-
+using Microsoft.EntityFrameworkCore;
 
 int input;
 string whichEntity = "";//bunu null yap bir
@@ -115,22 +115,22 @@ void FindRecord(string name)
 {
     if (whichEntity == "League")
     {
-        var entity = dataContext.Leagues.FirstOrDefault(x => x.Name == name);
+        var entity = dataContext.Leagues.AsNoTracking().FirstOrDefault(x => x.Name == name);
         Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Team")
     {
-        var entity = dataContext.Teams.FirstOrDefault(x => x.Name == name);
+        var entity = dataContext.Teams.AsNoTracking().FirstOrDefault(x => x.Name == name);
         Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Coach")
     {
-        var entity = dataContext.Coaches.FirstOrDefault(x => x.Name == name);
+        var entity = dataContext.Coaches.AsNoTracking().FirstOrDefault(x => x.Name == name);
         Console.WriteLine(entity.ToString());
     }
     else if (whichEntity == "Player")
     {
-        var entity = dataContext.Players.FirstOrDefault(x => x.Name == name);
+        var entity = dataContext.Players.AsNoTracking().FirstOrDefault(x => x.Name == name);
         Console.WriteLine(entity.ToString());
     }
 }
