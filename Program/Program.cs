@@ -66,7 +66,6 @@ void FirstMenuSelection()
             FirstMenuSection();
             break;
 
-
     }
     
 }
@@ -284,6 +283,13 @@ void SecondMenuSelection()
 
         case (9):
             FirstMenuSection();
+            break;
+
+        default:
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine("You pressed invalid key");
+            Console.BackgroundColor = ConsoleColor.Black;
+            SecondMenuSection();
             break;
 
 
