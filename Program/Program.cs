@@ -35,28 +35,40 @@ void FirstMenuSelection()
     {
         case (1):
             whichEntity = "League";
+            SecondMenuSection();
             break;
 
         case (2):
             whichEntity = "Team";
+            SecondMenuSection();
             break;
 
 
         case (3):
             whichEntity = "Coach";
+            SecondMenuSection();
             break;
 
 
         case (4):
             whichEntity = "Player";
+            SecondMenuSection();
             break;
 
         case (0):
             Environment.Exit(0);//look for this.
             break;
 
+        default:
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine("You pressed invalid key");
+            Console.BackgroundColor = ConsoleColor.Black;
+            FirstMenuSection();
+            break;
+
+
     }
-    SecondMenuSection(); 
+    
 }
 void SecondMenuSection()
 {
@@ -64,7 +76,8 @@ void SecondMenuSection()
     Console.WriteLine("2-Find" + " " + whichEntity);
     Console.WriteLine("3-Delete A Record");
     Console.WriteLine("4-Add A" + " " + whichEntity);
-    Console.WriteLine("0-Back");
+    Console.WriteLine("9-Back");
+    Console.WriteLine("0-Exit");
     Console.BackgroundColor = ConsoleColor.Magenta;
     Console.Write("Your Selection : ");
     input = int.Parse(Console.ReadLine());
@@ -262,10 +275,17 @@ void SecondMenuSelection()
 
             }
 
-            break; 
+            break;
+
         case (0):
+            Environment.Exit(0);
             FirstMenuSection();
             break;
+
+        case (9):
+            FirstMenuSection();
+            break;
+
 
     }
 }
