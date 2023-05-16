@@ -14,6 +14,7 @@ namespace Data.Repository
         T create(T entity);
         T update(T entity);
         void delete(T entity);
-        bool FindByName(string name);
+
+
     }
 }

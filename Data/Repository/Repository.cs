@@ -18,6 +18,7 @@ namespace Data.Repository
             context.SaveChanges();
         }
 
+
         public List<T> readAll()
         {
             return context.Set<T>().AsNoTracking().ToList();
